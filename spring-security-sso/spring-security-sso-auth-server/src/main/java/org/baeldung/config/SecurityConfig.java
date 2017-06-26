@@ -1,6 +1,8 @@
 package org.baeldung.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ErrorAttributes;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,7 +14,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private ErrorAttributes errorAttributes;
 
+    @Bean
+    public AppErrorController appErrorController(){return new AppErrorController(errorAttributes);}
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception { // @formatter:off
         http.requestMatchers()
@@ -32,7 +39,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .inMemoryAuthentication()
             .withUser("john")
             .password("123")
-            .roles("USER");
+            .roles("USER")
+                .and()
+                .withUser("admin")
+                .password("admin")
+                .roles("ADMIN");
+
     } // @formatter:on
 
 }

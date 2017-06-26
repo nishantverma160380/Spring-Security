@@ -1,6 +1,8 @@
 package org.baeldung.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ErrorAttributes;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -14,7 +16,12 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private ErrorAttributes errorAttributes;
 
+    @Bean
+    public AppErrorController appErrorController(){return new AppErrorController(errorAttributes);}
+    
     @Override
     public void configure(final AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
         oauthServer.tokenKeyAccess("permitAll()")

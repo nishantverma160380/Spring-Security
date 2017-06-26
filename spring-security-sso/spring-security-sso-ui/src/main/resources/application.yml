@@ -1,9 +1,9 @@
 server:
     port: 8082
-    context-path: /ui
+    context-path: /ui1
     session:
       cookie:
-        name: UISESSION
+        name: UI1SESSION
 security:
   basic:
     enabled: false
