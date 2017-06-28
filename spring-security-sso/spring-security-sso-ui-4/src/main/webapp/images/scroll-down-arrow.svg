@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="20px" viewBox="0 0 50 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>scroll down arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Mobile-Portrait" transform="translate(-135.000000, -658.000000)" stroke="#39B54A" stroke-width="3">
+            <g id="scroll-down-arrow" transform="translate(137.000000, 659.000000)">
+                <path d="M0.0562592554,0.99539262 L19.9795959,16.1727404 C21.3950523,17.2513923 23.3492361,17.2777301 24.7930255,16.2369886 L45.9474541,0.99539262" id="Page-1"></path>
+            </g>
+        </g>
+    </g>
+</svg>
