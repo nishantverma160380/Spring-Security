@@ -1,4 +1,4 @@
-package org.nhs.springsecurityssoui4.config;
+package org.nhs.springsecurityssoui3.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

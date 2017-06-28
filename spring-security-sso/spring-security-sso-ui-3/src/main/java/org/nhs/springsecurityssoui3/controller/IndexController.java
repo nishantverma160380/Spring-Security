@@ -1,4 +1,4 @@
-package org.nhs.springsecurityssoui4.controller;
+package org.nhs.springsecurityssoui3.controller;
 
 import java.util.Map;
 
@@ -10,7 +10,7 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String home(Map<String, Object> model) {
-		model.put("message", " NHS Liverpool !!");
+		model.put("message", " NHS Leeds !!");
 		return "index";
 	}
 	
@@ -22,7 +22,7 @@ public class IndexController {
 
 	@RequestMapping("/nhs")
 	public String nhs(Map<String, Object> model) {
-		model.put("message", "HowToDoInJava Reader !!");
-		return "LiverpoolNHS";
+		model.put("message", "Leeds NHS !!");
+		return "LeedsNHS";
 	}
 }

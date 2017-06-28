@@ -19,6 +19,8 @@
         <module>spring-security-sso-auth-server</module>
         <module>spring-security-sso-ui</module>
         <module>spring-security-sso-ui-2</module>
+        <module>spring-security-sso-ui-3</module>
+        <module>spring-security-sso-ui-4</module>
     </modules>
     
     <properties>

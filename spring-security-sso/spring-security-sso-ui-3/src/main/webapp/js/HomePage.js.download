@@ -1,0 +1,112 @@
+var trapScroll;
+
+$(document).ready(function() {
+	$('div.values').slick({
+		fade: true,
+		arrows: false,
+		dots: true,
+		speed: 1000,
+		responsive: [
+			{
+				breakpoint: break_point_tablet_portrait,
+				settings: 'unslick'
+			}
+		]
+	});
+	$('div.values-block-container').show();
+	
+	$('div.values-block-container.first div.values-block > ul > li').click(function() {
+		$('div.values').slick('slickGoTo', $(this).index() + 1);
+	});
+	
+	$(window).resize(function() {
+		var height = 0;
+		if (window_width() > break_point_tablet_portrait) {
+			$('div.values-block').each(function() {
+				$(this).css('height', '');
+				$('> p', this).css({
+					'padding-top' : '',
+					'padding-bottom' : ''
+				});
+				if ($(this).innerHeight() > height) {
+					height = $(this).outerHeight();
+				}
+			});
+			$('div.values-block').each(function() {
+				$(this).css('height', height + 'px');
+				if (!$(this).parent().hasClass('first')) {
+					p_height = $('> p', this).innerHeight();
+					p_padding = height - p_height;
+					if (p_padding > 0) {
+						$('> p', this).css({
+							'padding-top' : (p_padding * 0.3) + 'px',
+							'padding-bottom' : (p_padding * 0.7) + 'px'
+						});
+					}
+				}
+			});
+		}
+		else {
+			$('div.values-block-container').each(function() {
+				$(this).toggle($(this).hasClass('first'))
+				$('div.values-block', this).css('height', 'auto');
+			});
+		}
+		
+		blocks = $('div.featured-news > div > ul > li > a');
+        blocks.css('height', 'auto');
+        if (window_width() > break_point_phone) {
+            block_height = 0;
+            blocks.each(function() {
+                height = $(this).innerHeight();
+                if (height > block_height) {
+                    block_height = height;
+                }
+            });
+            blocks.css('height', block_height + 'px');
+        }
+	}).resize();
+	
+	
+	trapScroll = function(opt){
+    
+		var trapElement;
+		var scrollableDist;
+		var trapClassName = 'scroll-enabled';
+		var trapSelector = '.scroll';
+		
+		var trapWheel = function(e){
+			if (!$('body').hasClass(trapClassName)) {
+				return;
+			}
+			else {  
+				if (typeof trapElement !== "undefined") {
+					var curScrollPos = trapElement.scrollTop();
+					var wheelEvent = e.originalEvent;
+					var dY = wheelEvent.deltaY;
+					
+					if ((dY>0 && curScrollPos >= scrollableDist) || (dY<0 && curScrollPos <= 0)) {
+						return false;
+					}
+				}
+				else {
+					return;
+				}
+			}
+		}
+    
+		$(document).on('wheel', trapWheel).on('mouseleave', trapSelector, function(){
+			$('body').removeClass(trapClassName);
+		}).on('mouseenter', trapSelector, function(){   
+			trapElement = $(this);
+			var containerHeight = trapElement.outerHeight();
+			var contentHeight = trapElement[0].scrollHeight;
+			scrollableDist = contentHeight - containerHeight;
+			
+			if (contentHeight>containerHeight) {
+				$('body').addClass(trapClassName); 
+			}
+		});
+	}
+	trapScroll();
+});

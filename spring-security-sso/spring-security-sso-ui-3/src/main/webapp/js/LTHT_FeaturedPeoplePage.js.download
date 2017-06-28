@@ -1,0 +1,25 @@
+$(document).ready(function() {
+	if ($('.people-block ul').length > 0) {
+		$('.people-block ul').slick({
+			arrows: true,
+			speed: 600,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			infinite: true,
+			responsive: [
+				{
+					breakpoint: break_point_tablet_landscape,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: break_point_phone,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
+		});
+	}
+});
