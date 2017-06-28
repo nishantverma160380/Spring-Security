@@ -391,7 +391,6 @@
 				<li><a href="/">Contact Us</a><span>/</span></li>
 				<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 			</ul>
-			 			
 			<form action="${pageContext.request.contextPath}/logout" method="post">
                 <input type="submit" value="Logout" />
             </form>
