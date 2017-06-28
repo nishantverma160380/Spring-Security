@@ -19,7 +19,16 @@ public class SpringSecuritySsoUi3Application extends WebSecurityConfigurerAdapte
             .antMatchers("/", "/login**")
             .permitAll()
             .anyRequest()
-            .authenticated();
+            .authenticated()
+            .and()
+            .logout()
+            .logoutUrl("/j_spring_security_logout")
+            .invalidateHttpSession(true)
+            .clearAuthentication(true)
+            .deleteCookies("UI3SESSION")
+            .logoutSuccessUrl("/");
+        
+        http.csrf().disable();
     }
 	
     @Bean

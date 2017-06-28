@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="EN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome to Liverpool Community Health NHS Trust Website</title>
 <link rel="shortcut icon"
 	href="http://www.leedsth.nhs.uk/themes/ltht/images/favicon.ico">
-<link rel="StyleSheet" href="./css/WelcomeStyle.aspx.siteid-3290.ctid-5489.minify-true.css"	type="text/css">
+<link rel="StyleSheet"
+	href="./css/WelcomeStyle.aspx.siteid-3290.ctid-5489.minify-true.css"
+	type="text/css">
 <script id="twitter-wjs" src="./js/widgets.js.download"></script>
 <script async="" src="./js/analytics.js.download"></script>
 <script src="./js/jquery.min.js.download"></script>
@@ -24,13 +27,13 @@
 		<div class="header-surround">
 			<div class="header-container">
 				<a class="logo" href="/" title="Home"> <img
-					src="./images/logo.png"
-					alt="Liverpool Community Health NHS Trust" width="463" height="56"></a>
-					<label for="nav-toggle" class="nav-toggle-button">Menu</label> <input
-						type="hidden" name="sitekit" value="true"><label
-						for="head-search">Search this site</label> <input type="search"
-						id="head-search" name="search" placeholder="Search this site"><input
-						type="submit" value="Search">
+					src="./images/logo.png" alt="Liverpool Community Health NHS Trust"
+					width="463" height="56"></a> <label for="nav-toggle"
+					class="nav-toggle-button">Menu</label> <input type="hidden"
+					name="sitekit" value="true"><label for="head-search">Search
+					this site</label> <input type="search" id="head-search" name="search"
+					placeholder="Search this site"><input type="submit"
+					value="Search">
 			</div>
 		</div>
 	</div>
@@ -48,18 +51,20 @@
 								title="Our Performance - AccessKey:B">Our Performance</a></span></li>
 						<li><a href="/research/" accesskey="C"
 							title="Research - AccessKey:C">Research</a></li>
-						<li><span class="SKNavLast"> <a href="/gp-area/"
-								accesskey="E" title="GP Area - AccessKey:E">GP Area</a></span></li>
+						<li><a href="/gp-area/" accesskey="E"
+							title="GP Area - AccessKey:E">GP Area</a></li>
+						<li><span class="SKNavLast"> <a
+								href="<c:url value="/j_spring_security_logout" />" accesskey="L"
+								title="Logout">Logout</a></span></li>
 					</ul></li>
 			</ul>
 		</div>
 		<div class="cta-color-boxes sknoindex">
-			<a class="cta-color-box blue" href="/">
-			    <img src="./images/medic-box.png" alt="Medics box"><span>Health
-					Services</span></a> <a class="cta-color-box green" href="/">
-				<img src="./images/profile-silhouette.png"
-				alt="Profile silhouette"><span>Who We Are</span></a> <a
-				class="cta-color-box red" href="/"><img
+			<a class="cta-color-box blue" href="/"> <img
+				src="./images/medic-box.png" alt="Medics box"><span>Health
+					Services</span></a> <a class="cta-color-box green" href="/"> <img
+				src="./images/profile-silhouette.png" alt="Profile silhouette"><span>Who
+					We Are</span></a> <a class="cta-color-box red" href="/"><img
 				src="./images/heart.png" alt="Heart outline"><span>Healthy
 					You</span></a> <a class="cta-color-box purple" href="/"><img
 				src="./images/documents.png" alt="Documents"><span>Open

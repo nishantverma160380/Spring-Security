@@ -19,7 +19,17 @@ public class SpringSecuritySsoUi4Application extends WebSecurityConfigurerAdapte
             .antMatchers("/", "/login**")
             .permitAll()
             .anyRequest()
-            .authenticated();
+            .authenticated()
+            .and()
+            .logout()
+            .logoutUrl("/j_spring_security_logout")
+            .invalidateHttpSession(true)
+            .clearAuthentication(true)
+            .deleteCookies("UI4SESSION")
+            .logoutSuccessUrl("/");
+        
+        http.csrf().disable();
+
     }
 	
     @Bean

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- saved from url=(0026)http://www.leedsth.nhs.uk/ -->
 <html lang="en-GB">
 <!--<![endif]-->
@@ -387,8 +388,13 @@
 			<ul>
 				<li><a href="/">News</a><span>/</span></li>
 				<li><a href="/">Members</a><span>/</span></li>
-				<li><a href="/">Contact Us</a></li>
+				<li><a href="/">Contact Us</a><span>/</span></li>
+				<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 			</ul>
+			 			
+			<form action="${pageContext.request.contextPath}/logout" method="post">
+                <input type="submit" value="Logout" />
+            </form>
 			<form id="SiteSearchForm_search" action="/" method="get"
 				enctype="application/x-www-form-urlencoded" class="site-search"
 				novalidate="novalidate">

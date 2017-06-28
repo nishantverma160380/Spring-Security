@@ -3,7 +3,7 @@ server:
     context-path: /ui4
     session:
       cookie:
-        name: UI3SESSION
+        name: UI4SESSION
 security:
   basic:
     enabled: false
